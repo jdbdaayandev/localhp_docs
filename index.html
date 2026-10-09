@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Complete developer documentation for the LocalPHP lightweight PHP framework.">
+<title>LocalPHP Documentation</title>
+<style>
+:root{--bg:#f7f9fc;--surface:#fff;--text:#172033;--muted:#637087;--line:#e4e9f1;--primary:#315ee7;--primary-soft:#edf2ff;--code:#101827;--green:#087f5b;--amber:#946200;--shadow:0 8px 28px rgba(25,45,85,.06)}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:28px}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.72 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}.topbar{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 28px}.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:17px;letter-spacing:-.4px}.mark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#4169f5,#7b54df);color:white;display:grid;place-items:center;font-weight:900}.topmeta{font-size:12px;color:var(--muted)}.layout{display:grid;grid-template-columns:270px minmax(0,1fr);max-width:1500px;margin:auto}.sidebar{position:sticky;top:64px;height:calc(100vh - 64px);overflow:auto;padding:26px 18px 40px 24px;border-right:1px solid var(--line);background:#fbfcfe}.search{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px 12px;font:inherit;background:white;margin-bottom:22px}.navgroup{margin:20px 0}.navlabel{font-size:10px;letter-spacing:1.2px;font-weight:800;color:#8b96a9;text-transform:uppercase;margin:0 0 8px 10px}.sidebar a{display:block;padding:7px 10px;border-radius:7px;color:#4d5a70;font-size:13px}.sidebar a:hover,.sidebar a.active{background:var(--primary-soft);color:var(--primary);text-decoration:none}.content{min-width:0;padding:48px clamp(22px,5vw,76px) 90px;max-width:1100px}.eyebrow{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;font-weight:800;color:var(--primary)}h1{font-size:clamp(36px,5vw,54px);line-height:1.1;letter-spacing:-2px;margin:12px 0 20px}h2{font-size:29px;line-height:1.25;letter-spacing:-.8px;margin:0 0 18px;padding-top:18px}h3{font-size:19px;margin:28px 0 8px;letter-spacing:-.3px}h4{font-size:15px;margin:22px 0 7px}p{margin:10px 0 16px;color:#455168}ul,ol{padding-left:23px;color:#455168}li{margin:5px 0}.lead{font-size:18px;max-width:760px;color:#59667c}.hero{background:linear-gradient(135deg,#fff 10%,#f0f4ff 100%);border:1px solid var(--line);border-radius:22px;padding:36px;margin-bottom:28px;box-shadow:var(--shadow)}.pills{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}.pill{border:1px solid #dfe6f2;background:white;color:#4c5b73;border-radius:99px;padding:5px 11px;font-size:12px;font-weight:650}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:22px 0}.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 3px 12px rgba(25,45,85,.025)}.card strong{display:block;font-size:15px;margin-bottom:5px}.card p{font-size:13px;margin:0}.section{padding:26px 0 34px;border-bottom:1px solid var(--line)}.section:last-child{border-bottom:0}.callout{padding:14px 16px;border-radius:10px;border:1px solid #dce6ff;background:#f2f6ff;color:#3d4c69;margin:18px 0}.callout.warn{border-color:#f1dfb4;background:#fff9e9}.callout.good{border-color:#ccebdc;background:#effbf5}.callout strong{color:var(--text)}pre{position:relative;overflow:auto;background:var(--code);color:#e6edf7;border-radius:12px;padding:18px 20px;font:13px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;margin:14px 0 20px;border:1px solid #202c40}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.91em;background:#edf1f7;border-radius:5px;padding:2px 5px;color:#27364f}pre code{background:none;color:inherit;padding:0;font-size:inherit}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:12px;margin:14px 0 20px;background:white}table{border-collapse:collapse;width:100%;min-width:540px;font-size:13px}th,td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--line)}th{background:#f5f7fb;color:#39465e;font-size:11px;text-transform:uppercase;letter-spacing:.5px}tr:last-child td{border-bottom:0}.tocgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.tocgrid a{background:white;border:1px solid var(--line);border-radius:9px;padding:10px 12px;font-size:13px;color:#46546a}.tocgrid a:hover{border-color:#aebfff;text-decoration:none}.muted{color:var(--muted);font-size:13px}.signature{font-weight:700;color:#334155}.footer{border-top:1px solid var(--line);padding-top:25px;margin-top:35px;color:var(--muted);font-size:12px}.hidden{display:none!important}.tag{display:inline-block;border-radius:5px;padding:2px 6px;font-size:10px;font-weight:800;background:#e8f7ef;color:var(--green);text-transform:uppercase;letter-spacing:.4px}.tag.caution{background:#fff2d4;color:var(--amber)}.mobilemenu{display:none}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{position:fixed;left:0;top:64px;bottom:0;width:280px;z-index:6;transform:translateX(-105%);transition:transform .2s;box-shadow:var(--shadow)}.sidebar.open{transform:translateX(0)}.mobilemenu{display:inline-block;border:1px solid var(--line);background:white;border-radius:8px;padding:7px 10px}.content{padding:28px 20px 60px}.cards{grid-template-columns:1fr}.hero{padding:24px}.topbar{padding:0 16px}.topmeta{display:none}}@media(min-width:901px){.sidebar{transform:none!important}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="brand"><span class="mark">L</span><span>LocalPHP <span style="font-weight:500;color:#8290a5">/ Docs</span></span></div><div style="display:flex;align-items:center;gap:12px"><span class="topmeta">Framework reference · PHP 8.2+</span><button class="mobilemenu" id="menuBtn" aria-label="Toggle navigation">☰</button></div></header>
+<div class="layout">
+<aside class="sidebar" id="sidebar"><input class="search" id="docSearch" type="search" placeholder="Search documentation…" aria-label="Search documentation">
+<div class="navgroup"><div class="navlabel">Start here</div><a href="#overview">Overview</a><a href="#requirements">Requirements</a><a href="#installation">Installation</a><a href="#structure">Project structure</a><a href="#lifecycle">Request lifecycle</a></div>
+<div class="navgroup"><div class="navlabel">Application</div><a href="#configuration">Configuration & .env</a><a href="#routing">Routing</a><a href="#controllers">Controllers</a><a href="#requests">Requests & responses</a><a href="#views">Views & templates</a><a href="#helpers">Helpers reference</a><a href="#sessions">Sessions & flash</a><a href="#validation">Validation</a></div>
+<div class="navgroup"><div class="navlabel">Database</div><a href="#database">Database connection</a><a href="#query-builder">Query builder</a><a href="#models">Models / ORM</a><a href="#schema">Schema & migrations</a><a href="#seeders">Seeders</a></div>
+<div class="navgroup"><div class="navlabel">Operations</div><a href="#cli">CLI commands</a><a href="#cache-logs">Cache & logs</a><a href="#security">Security practices</a><a href="#troubleshooting">Troubleshooting</a><a href="#api-index">API index</a><a href="#status">Implementation status</a></div>
+</aside>
+<main class="content" id="main">
+<section class="hero" id="overview"><div class="eyebrow">Developer documentation</div><h1>Build locally.<br>Understand every layer.</h1><p class="lead">LocalPHP is a lightweight PHP framework designed for local application development. This guide covers the project structure, HTTP layer, routing, custom views, database tools, validation, sessions, and CLI commands present in the current source.</p><div class="pills"><span class="pill">PHP 8.2+</span><span class="pill">Composer / PSR-4</span><span class="pill">MySQL / PDO</span><span class="pill">Custom PHP templates</span><span class="pill">Local development focus</span></div><div class="callout"><strong>Version note.</strong> The inspected source identifies itself as LocalPHP <code>0.2.0</code> and is actively evolving. This documentation describes the source snapshot it accompanies; confirm behavior against your current working copy if you have made later changes.</div><div class="tocgrid"><a href="#installation">01 · Install and run</a><a href="#routing">02 · Define routes</a><a href="#views">03 · Render views</a><a href="#query-builder">04 · Query the database</a><a href="#validation">05 · Validate input</a><a href="#cli">06 · Use the CLI</a></div></section>
+<section class="section" id="requirements"><h2>1. Requirements</h2><div class="cards"><div class="card"><strong>PHP 8.2 or newer</strong><p>The Composer project requires PHP <code>^8.2</code>.</p></div><div class="card"><strong>Composer</strong><p>Used for PSR-4 autoloading and helper-file loading.</p></div><div class="card"><strong>Local server</strong><p>Laragon/Apache is the primary documented setup. MySQL is needed for database features.</p></div></div><p>Ensure PHP has PDO and the MySQL PDO driver enabled. The database implementation currently accepts the <code>mysql</code> driver.</p></section>
+<section class="section" id="installation"><h2>2. Installation and first run</h2><h3>Install dependencies</h3><p>Open a terminal in the project root:</p><pre><code>composer install
+composer dump-autoload
+php local list</code></pre><h3>Configure environment</h3><p>Create or update the root <code>.env</code> file. Example values for a local Laragon installation:</p><pre><code>APP_NAME=LocalPHP
+APP_ENV=local
+APP_DEBUG=true
+APP_URL=http://localhost/localphp
+APP_TIMEZONE=Asia/Manila
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=localphp
+DB_USERNAME=root
+DB_PASSWORD=
+DB_CHARSET=utf8mb4
+
+SESSION_NAME=localphp_session
+SESSION_LIFETIME=120
+SESSION_PATH=/
+SESSION_DOMAIN=
+SESSION_SECURE=false
+SESSION_SAME_SITE=Lax</code></pre><p>Change <code>APP_URL</code> and database credentials to match your machine. Create the database in MySQL before running migrations.</p><h3>Open the application</h3><p>Start Apache in Laragon and browse to the configured URL, commonly <code>http://localhost/localphp/</code>. Start MySQL when using database features.</p><div class="callout warn"><strong>Local-only settings.</strong> The sample enables debug mode and uses example credentials. Do not expose a debug-enabled development installation publicly, and never commit real secrets.</div></section>
+<section class="section" id="structure"><h2>3. Project structure</h2><pre><code>localphp/
+├── app/
+│   ├── Controllers/
+│   ├── Filters/
+│   └── Models/
+├── bootstrap/app.php
+├── config/
+│   ├── app.php
+│   ├── database.php
+│   └── filters.php
+├── database/
+│   ├── migrations/
+│   └── seeders/
+├── docs/index.html
+├── framework/src/
+│   ├── Console/Kernel.php
+│   ├── Container/Container.php
+│   ├── Database/
+│   ├── Http/
+│   ├── Model/Model.php
+│   ├── Routing/
+│   ├── Session/
+│   ├── Support/
+│   ├── Validation/
+│   ├── View/
+│   └── helpers.php
+├── resources/views/
+├── routes/web.php
+├── storage/
+├── .env
+├── composer.json
+├── index.php
+└── local</code></pre><div class="tablewrap"><table><thead><tr><th>Path</th><th>Purpose</th></tr></thead><tbody><tr><td><code>app/Controllers</code></td><td>Application controller classes.</td></tr><tr><td><code>app/Models</code></td><td>Models and application data access.</td></tr><tr><td><code>app/Filters</code></td><td>Filter classes generated by the CLI; confirm registration/execution before relying on a filter pipeline.</td></tr><tr><td><code>bootstrap/app.php</code></td><td>Creates the LocalPHP application instance.</td></tr><tr><td><code>config/</code></td><td>PHP configuration files.</td></tr><tr><td><code>framework/src/</code></td><td>Framework core source code.</td></tr><tr><td><code>resources/views/</code></td><td>PHP templates and layouts.</td></tr><tr><td><code>routes/web.php</code></td><td>Web route definitions.</td></tr><tr><td><code>database/migrations</code>, <code>database/seeders</code></td><td>Migration and seeder files used by CLI commands.</td></tr><tr><td><code>storage/cache</code></td><td>Generated configuration cache files.</td></tr><tr><td><code>storage/logs</code></td><td>Daily exception logs when the exception handler writes successfully.</td></tr></tbody></table></div></section>
+<section class="section" id="lifecycle"><h2>4. Application bootstrap and request lifecycle</h2><p>The root entry point loads Composer, boots the app, captures an HTTP request, asks the application to handle it, and sends the resulting response.</p><pre><code>// bootstrap/app.php
+&lt;?php
+declare(strict_types=1);
+
+use LocalPHP\Application;
+
+$app = new Application(basePath: dirname(__DIR__));
+return $app;</code></pre><pre><code>// index.php
+require_once __DIR__ . '/vendor/autoload.php';
+$app = require __DIR__ . '/bootstrap/app.php';
+$request = LocalPHP\Http\Request::capture();
+$response = $app-&gt;handle($request);
+$response-&gt;send();</code></pre><p>The application initializes environment/configuration, core services, and route loading. Route definitions are loaded from <code>routes/web.php</code>. The request is matched by the router and translated into a response.</p></section>
+<section class="section" id="configuration"><h2>5. Environment and configuration</h2><h3>Environment values</h3><p>The environment loader reads the root <code>.env</code> file and exposes values through <code>env()</code>. The loader handles common quoted values, comments, basic value normalization, and variable interpolation. Keep credentials outside committed source.</p><pre><code>$environment = env('APP_ENV', 'local');
+$debug = env('APP_DEBUG', true);
+$database = env('DB_DATABASE', 'localphp');</code></pre><h3>Configuration files</h3><p>Application settings live in <code>config/*.php</code>. Use dot notation with <code>config()</code> to retrieve a nested value:</p><pre><code>$appName = config('app.name', 'LocalPHP');
+$defaultConnection = config('database.default', 'mysql');</code></pre><p>The configuration helper can read the generated <code>storage/cache/config.php</code> file if present. Regenerate it after changing configuration values.</p><h3>Timezone</h3><p>Set <code>APP_TIMEZONE</code> to a valid PHP timezone identifier, such as <code>Asia/Manila</code>.</p></section>
+<section class="section" id="routing"><h2>6. Routing</h2><p>Define routes in <code>routes/web.php</code>. The route file receives the bootstrapped <code>$app</code> variable. Retrieve the router with <code>$app-&gt;router()</code>.</p><h3>Basic routes</h3><pre><code>&lt;?php
+declare(strict_types=1);
+
+use App\Controllers\HomeController;
+
+$router = $app-&gt;router();
+
+$router-&gt;get('/', [HomeController::class, 'index']);
+$router-&gt;get('/hello', fn () =&gt; 'Hello from LocalPHP!');
+$router-&gt;get('/hello/{name}', function ($request, $name) {
+    return "Hello, {$name}!";
+});</code></pre><h3>Available route methods</h3><div class="tablewrap"><table><thead><tr><th>Method</th><th>Use</th></tr></thead><tbody><tr><td><code>get($uri, $action)</code></td><td>Register GET route.</td></tr><tr><td><code>post($uri, $action)</code></td><td>Register POST route.</td></tr><tr><td><code>put($uri, $action)</code></td><td>Register PUT route.</td></tr><tr><td><code>patch($uri, $action)</code></td><td>Register PATCH route.</td></tr><tr><td><code>delete($uri, $action)</code></td><td>Register DELETE route.</td></tr><tr><td><code>any($uri, $action)</code></td><td>Register a route for supported methods.</td></tr><tr><td><code>group($attributes, $callback)</code></td><td>Register grouped routes with attributes such as prefixes.</td></tr><tr><td><code>urlFor($name, $parameters = [])</code></td><td>Generate a URL for a named route.</td></tr></tbody></table></div><h3>Named routes</h3><pre><code>$router-&gt;get('/products/{id}', [ProductController::class, 'show'])
+    -&gt;name('products.show');
+
+$url = $router-&gt;urlFor('products.show', ['id' =&gt; 12]);</code></pre><p>Route names and URI parameters are handled by the current <code>Route</code> and <code>Router</code> classes. Check the implementation for edge cases before depending on advanced grouping or middleware behavior.</p></section>
+<section class="section" id="controllers"><h2>7. Controllers</h2><p>Controllers belong in <code>app/Controllers/</code> under the <code>App\Controllers</code> namespace. An HTTP controller action should return a response, commonly by rendering a view.</p><pre><code>&lt;?php
+declare(strict_types=1);
+
+namespace App\Controllers;
+
+use LocalPHP\Http\Response;
+
+final class HomeController
+{
+    public function index(): Response
+    {
+        return view('home', [
+            'title' =&gt; 'Welcome to LocalPHP',
+        ]);
+    }
+}</code></pre><p>Keep request-specific coordination in controllers and put reusable domain logic in services or models. The current generator is <code>php local make:controller Home</code>.</p></section>
+<section class="section" id="requests"><h2>8. HTTP requests and responses</h2><h3>Request access</h3><p>The <code>LocalPHP\Http\Request</code> object wraps request information instead of having every controller read PHP superglobals directly.</p><pre><code>$request-&gt;method();
+$request-&gt;uri();
+$request-&gt;query('page', 1);      // query-string value
+$request-&gt;input('email');       // submitted input
+$request-&gt;file('avatar');       // uploaded file entry
+$request-&gt;cookie('theme');
+$request-&gt;server('REQUEST_TIME');
+$request-&gt;isMethod('POST');</code></pre><p>Convenience methods include <code>isGet()</code>, <code>isPost()</code>, <code>isPut()</code>, and <code>isDelete()</code>. Verify the exact distinction between query and input data in the current request implementation before relying on it for security-sensitive checks.</p><h3>Responses</h3><pre><code>return response('Created', 201);
+return response(['ok' =&gt; true, 'count' =&gt; 3]);
+return response('&lt;h1&gt;Not found&lt;/h1&gt;', 404, [
+    'Content-Type' =&gt; 'text/html; charset=UTF-8',
+]);
+
+return redirect(url('login'));</code></pre><p><code>Response</code> exposes <code>content()</code>, <code>statusCode()</code>, <code>status($code)</code>, <code>header($name, $value)</code>, <code>headers()</code>, and <code>send()</code>. The helper serializes supported response content; check the helper source for its exact content-type behavior.</p></section>
+<section class="section" id="views"><h2>9. Views and the template engine</h2><p>View files live in <code>resources/views/</code>. The helper convention maps dot notation to nested directories: <code>view('home')</code> resolves <code>resources/views/home.php</code>, while <code>view('layouts.app')</code> resolves <code>resources/views/layouts/app.php</code>.</p><h3>Render a view</h3><pre><code>return view('home', [
+    'title' =&gt; 'Products',
+    'products' =&gt; $products,
+]);</code></pre><h3>Layout example</h3><pre><code>&lt;!-- resources/views/layouts/app.php --&gt;
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;@yield('title', 'LocalPHP')&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;main&gt;@yield('content')&lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><h3>Template directives</h3><div class="tablewrap"><table><thead><tr><th>Syntax</th><th>Purpose</th></tr></thead><tbody><tr><td><code>{{ $value }}</code></td><td>Escaped output.</td></tr><tr><td><code>{!! $html !!}</code></td><td>Raw HTML output; only use trusted or properly sanitized content.</td></tr><tr><td><code>@extends('layouts.app')</code></td><td>Choose a layout.</td></tr><tr><td><code>@section('content')</code> / <code>@endsection</code></td><td>Define a section.</td></tr><tr><td><code>@yield('content')</code></td><td>Output a section in a layout.</td></tr><tr><td><code>@include('partials.header')</code></td><td>Include another view.</td></tr><tr><td><code>@if</code>, <code>@elseif</code>, <code>@else</code>, <code>@endif</code></td><td>Conditional rendering.</td></tr><tr><td><code>@foreach</code>, <code>@endforeach</code>, <code>@for</code>, <code>@endfor</code>, <code>@while</code>, <code>@endwhile</code></td><td>Loops.</td></tr><tr><td><code>@break</code>, <code>@continue</code></td><td>Loop control.</td></tr><tr><td><code>@php</code> / <code>@endphp</code></td><td>Execute a PHP template block.</td></tr></tbody></table></div><div class="callout warn"><strong>Important:</strong> This is LocalPHP's custom template engine, not Laravel Blade. Directive behavior and edge cases depend on <code>framework/src/View/Local.php</code>. Do not assume all Laravel Blade features exist.</div></section>
+<section class="section" id="helpers"><h2>10. Global helper reference</h2><p>Helper functions are loaded through Composer's <code>autoload.files</code> entry in <code>composer.json</code>.</p><div class="tablewrap"><table><thead><tr><th>Helper</th><th>Purpose / example</th></tr></thead><tbody><tr><td><code>app($abstract = null)</code></td><td>Get the application or resolve a registered service.</td></tr><tr><td><code>env($key, $default = null)</code></td><td>Read an environment value.</td></tr><tr><td><code>config($key = null, $default = null)</code></td><td>Read configuration; dot notation is supported.</td></tr><tr><td><code>request()</code></td><td>Access the current request object where available.</td></tr><tr><td><code>response($content = '', $status = 200, $headers = [])</code></td><td>Create a response.</td></tr><tr><td><code>view($name, $data = [])</code></td><td>Render a template into a response.</td></tr><tr><td><code>base_url($path = '')</code></td><td>Build a URL relative to configured application URL.</td></tr><tr><td><code>url($path = '')</code></td><td>URL helper for application paths.</td></tr><tr><td><code>asset($path)</code></td><td>Build an asset URL.</td></tr><tr><td><code>redirect($url, $status = 302)</code></td><td>Create a redirect response.</td></tr><tr><td><code>session($key = null, $default = null)</code></td><td>Access session data or the session manager, depending on arguments.</td></tr><tr><td><code>flash($key, $value)</code></td><td>Store a flash value for a later request.</td></tr><tr><td><code>csrf_token()</code>, <code>csrf_field()</code></td><td>Generate a CSRF token or hidden form field. Confirm token validation is wired into your request handling before relying on protection.</td></tr><tr><td><code>old($key, $default = null)</code></td><td>Retrieve prior input if available.</td></tr><tr><td><code>db()</code></td><td>Resolve the database manager.</td></tr><tr><td><code>raw($sql, $bindings = [])</code></td><td>Create a raw SQL expression with bindings.</td></tr><tr><td><code>validator($data, $rules, $messages = [])</code></td><td>Create a validator instance.</td></tr><tr><td><code>validate($data, $rules, $messages = [])</code></td><td>Return validated data or throw <code>ValidationException</code>.</td></tr></tbody></table></div></section>
+<section class="section" id="sessions"><h2>11. Sessions and flash messages</h2><p>The session manager supports reading, writing, checking, pulling, forgetting, flushing, regenerating, destroying, and flash data. The helpers include <code>session()</code> and <code>flash()</code>.</p><pre><code>// Read and write session data
+$count = session('count', 0);
+session()-&gt;put('count', $count + 1);
+
+// Flash data for the next request
+flash('success', 'Saved successfully!');
+
+// Access flash data through the session manager
+$message = session()-&gt;getFlash('success');</code></pre><p>Example session configuration keys include <code>SESSION_NAME</code>, <code>SESSION_LIFETIME</code>, <code>SESSION_PATH</code>, <code>SESSION_DOMAIN</code>, <code>SESSION_SECURE</code>, and <code>SESSION_SAME_SITE</code>. Use HTTPS and secure cookie settings in any HTTPS deployment. Session behavior depends on PHP session configuration and when the manager starts the session.</p></section>
+<section class="section" id="validation"><h2>12. Input validation</h2><h3>Validate data</h3><pre><code>$data = validate($request-&gt;input(), [
+    'name' =&gt; 'required|string|min:2|max:100',
+    'email' =&gt; 'required|email',
+    'age' =&gt; 'nullable|integer|min:18',
+]);</code></pre><p>For non-throwing control flow, use a validator instance:</p><pre><code>$validator = validator($input, [
+    'email' =&gt; 'required|email',
+]);
+
+if ($validator-&gt;fails()) {
+    $errors = $validator-&gt;errors();
+    $firstMessage = $validator-&gt;first('email');
+} else {
+    $safeData = $validator-&gt;validated();
+}</code></pre><h3>Implemented rule names in the current source</h3><p><code>required</code>, <code>nullable</code>, <code>sometimes</code>, <code>string</code>, <code>integer</code>, <code>numeric</code>, <code>boolean</code>, <code>array</code>, <code>email</code>, <code>url</code>, <code>alpha</code>, <code>alpha_num</code>, <code>alpha_dash</code>, <code>min</code>, <code>max</code>, <code>between</code>, <code>in</code>, <code>not_in</code>, <code>confirmed</code>, <code>same</code>, <code>different</code>, <code>date</code>, <code>date_format</code>, <code>regex</code>, <code>accepted</code>, <code>digits</code>, <code>uuid</code>, <code>json</code>, <code>unique</code>, and <code>exists</code>.</p><div class="callout warn"><strong>Database-backed rules.</strong> <code>unique</code> and <code>exists</code> need a working configured database. Validate data on the server even when client-side validation is present.</div><p>Reusable validator classes can be generated with <code>php local make:validator User</code>. The generator provides a rules method scaffold; connect the validator to the relevant controller/action yourself.</p></section>
+<section class="section" id="database"><h2>13. Database connection</h2><p>LocalPHP's database layer uses PDO and currently supports MySQL/MariaDB-style connections. The connection uses exception mode, associative fetches, and native prepared statements by default.</p><pre><code>// config/database.php should match your environment
+return [
+    'default' =&gt; env('DB_CONNECTION', 'mysql'),
+    'connections' =&gt; [
+        'mysql' =&gt; [
+            'driver' =&gt; 'mysql',
+            'host' =&gt; env('DB_HOST', '127.0.0.1'),
+            'port' =&gt; env('DB_PORT', 3306),
+            'database' =&gt; env('DB_DATABASE', 'localphp'),
+            'username' =&gt; env('DB_USERNAME', 'root'),
+            'password' =&gt; env('DB_PASSWORD', ''),
+            'charset' =&gt; env('DB_CHARSET', 'utf8mb4'),
+        ],
+    ],
+];</code></pre><p>Use the global <code>db()</code> helper for the manager or the static <code>LocalPHP\Database\DB</code> entry point. Database creation is lazy in the CLI so commands that do not need the database can run without an active MySQL server.</p><pre><code>use LocalPHP\Database\DB;
+
+$users = DB::table('users')
+    -&gt;where('active', 1)
+    -&gt;orderBy('name')
+    -&gt;get();</code></pre><h3>Transactions</h3><pre><code>DB::transaction(function ($connection) {
+    // Perform related database operations here.
+});</code></pre><p>The facade also exposes <code>beginTransaction()</code>, <code>commit()</code>, <code>rollBack()</code>, <code>connection()</code>, and <code>disconnect()</code>. Prefer the transaction callback when it fits the operation.</p></section>
+<section class="section" id="query-builder"><h2>14. Query builder reference</h2><p>Start with <code>DB::table('table_name')</code> or a model's <code>query()</code> method. Builder calls are chainable. Values should be passed through builder parameters instead of concatenated into SQL.</p><h3>Selecting and retrieving</h3><pre><code>$rows = DB::table('products')-&gt;select('id', 'name', 'price')-&gt;get();
+$product = DB::table('products')-&gt;where('id', 10)-&gt;first();
+$product = DB::table('products')-&gt;find(10);
+$names = DB::table('products')-&gt;pluck('name');
+$price = DB::table('products')-&gt;where('id', 10)-&gt;value('price');
+$count = DB::table('products')-&gt;count();</code></pre><h3>Filters and conditions</h3><p>Supported methods include <code>where</code>, <code>orWhere</code>, <code>whereColumn</code>, <code>whereIn</code>, <code>orWhereIn</code>, <code>whereNotIn</code>, <code>orWhereNotIn</code>, <code>whereBetween</code>, <code>orWhereBetween</code>, <code>whereNotBetween</code>, <code>orWhereNotBetween</code>, <code>whereNull</code>, <code>orWhereNull</code>, <code>whereNotNull</code>, <code>orWhereNotNull</code>, <code>whereDate</code>, <code>whereTime</code>, <code>whereYear</code>, <code>whereMonth</code>, <code>whereDay</code>, <code>whereLike</code>, <code>whereNotLike</code>, <code>whereRaw</code>, <code>orWhereRaw</code>, <code>whereNested</code>, <code>whereExists</code>, <code>orWhereExists</code>, <code>whereNotExists</code>, and <code>orWhereNotExists</code>.</p><pre><code>$products = DB::table('products')
+    -&gt;where('active', 1)
+    -&gt;where(function ($query) {
+        $query-&gt;where('stock', '&gt;', 0)
+              -&gt;orWhere('allow_backorder', 1);
+    })
+    -&gt;get();</code></pre><h3>Joins, grouping, ordering</h3><p>Join methods: <code>join</code>, <code>leftJoin</code>, <code>rightJoin</code>, <code>crossJoin</code>, <code>joinSub</code>, <code>leftJoinSub</code>. Grouping and aggregation methods include <code>groupBy</code>, <code>groupByRaw</code>, <code>having</code>, <code>orHaving</code>, <code>havingRaw</code>, <code>sum</code>, <code>avg</code>, <code>min</code>, <code>max</code>, <code>exists</code>, and <code>doesntExist</code>.</p><pre><code>$totals = DB::table('order_items')
+    -&gt;select('product_id')
+    -&gt;selectRaw('SUM(quantity * unit_price) AS total')
+    -&gt;groupBy('product_id')
+    -&gt;having('total', '&gt;', 1000)
+    -&gt;get();</code></pre><h3>Ordering and pagination-style limits</h3><p>Use <code>orderBy</code>, <code>orderByDesc</code>, <code>orderByRaw</code>, <code>latest</code>, <code>oldest</code>, <code>inRandomOrder</code>, <code>limit</code>, <code>take</code>, <code>offset</code>, <code>skip</code>, and <code>forPage</code>.</p><h3>Writes</h3><pre><code>DB::table('products')-&gt;insert([
+    'name' =&gt; 'Spark Plug',
+    'price' =&gt; 150.00,
+]);
+
+DB::table('products')-&gt;where('id', 10)-&gt;update([
+    'price' =&gt; 175.00,
+]);
+
+DB::table('products')-&gt;where('id', 10)-&gt;delete();</code></pre><p>The builder also provides <code>insertGetId</code>, <code>upsert</code>, <code>increment</code>, <code>decrement</code>, conditional chaining via <code>when</code> and <code>unless</code>, raw expressions, and SQL/binding inspection through <code>toSql()</code> and <code>getBindings()</code>. Confirm method signatures in <code>framework/src/Database/QueryBuilder.php</code> for less common operations.</p><div class="callout warn"><strong>Raw SQL caution.</strong> Bind user-controlled values. Raw SQL fragments and identifier names are not interchangeable with bound values. Never interpolate untrusted input directly into a raw SQL string.</div></section>
+<section class="section" id="models"><h2>15. Models / ORM</h2><p>Models extend <code>LocalPHP\Model\Model</code>. Set the table explicitly when needed and define mass-assignable fields with <code>$fillable</code>.</p><pre><code>&lt;?php
+declare(strict_types=1);
+
+namespace App\Models;
+
+use LocalPHP\Model\Model;
+
+final class Product extends Model
+{
+    protected string $table = 'products';
+    protected array $fillable = ['name', 'sku', 'price', 'stock'];
+}</code></pre><h3>Common operations</h3><pre><code>$all = Product::all();
+$product = Product::find(1);
+$matching = Product::where('active', 1)-&gt;get();
+$count = Product::count();
+
+$product = Product::create([
+    'name' =&gt; 'Brake Pad',
+    'sku' =&gt; 'BP-001',
+    'price' =&gt; 350,
+    'stock' =&gt; 12,
+]);
+
+$product-&gt;price = 375;
+$product-&gt;save();
+$product-&gt;delete();</code></pre><p>Model methods include <code>query</code>, <code>all</code>, <code>find</code>, <code>where</code>, <code>orderBy</code>, <code>create</code>, <code>firstOrCreate</code>, <code>count</code>, <code>fill</code>, <code>getAttribute</code>, <code>setAttribute</code>, <code>getAttributes</code>, <code>toArray</code>, <code>save</code>, <code>delete</code>, <code>exists</code>, <code>getTable</code>, and <code>getKeyName</code>.</p><div class="callout warn"><strong>ORM scope.</strong> This is a lightweight custom ORM, not a feature-complete Active Record package. Do not assume relationships, eager loading, scopes, events, casts, or soft-delete filtering exist unless present in the source.</div></section>
+<section class="section" id="schema"><h2>16. Schema builder and migrations</h2><h3>Schema builder</h3><p><code>LocalPHP\Database\Schema</code> supports creating, altering, and dropping MySQL tables from PHP code.</p><pre><code>use LocalPHP\Database\Schema;
+use LocalPHP\Database\Blueprint;
+
+Schema::create('products', function (Blueprint $table): void {
+    $table-&gt;id();
+    $table-&gt;string('name', 150);
+    $table-&gt;string('sku', 60);
+    $table-&gt;decimal('price', 10, 2);
+    $table-&gt;integer('stock')-&gt;default(0);
+    $table-&gt;timestamps();
+    $table-&gt;unique('sku');
+});</code></pre><p>Column helpers in the current source include <code>id</code>, <code>bigIncrements</code>, <code>increments</code>, <code>string</code>, <code>char</code>, <code>text</code>, <code>mediumText</code>, <code>longText</code>, <code>integer</code>, <code>bigInteger</code>, <code>tinyInteger</code>, <code>boolean</code>, <code>decimal</code>, <code>float</code>, <code>double</code>, <code>date</code>, <code>dateTime</code>, <code>timestamp</code>, <code>json</code>, <code>timestamps</code>, and <code>softDeletes</code>. Index helpers include <code>index</code>, <code>unique</code>, <code>primaryKey</code>, and <code>foreign</code>. Column options are defined by <code>ColumnDefinition</code>; inspect that class for supported modifiers.</p><h3>Migration class</h3><p>Migration files are stored in <code>database/migrations/</code> and use <code>LocalPHP\Database\Migration</code>:</p><pre><code>use LocalPHP\Database\Migration;
+use PDO;
+
+return new class extends Migration {
+    public function up(PDO $pdo): void
+    {
+        $pdo-&gt;exec('CREATE TABLE example (id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY)');
+    }
+
+    public function down(PDO $pdo): void
+    {
+        $pdo-&gt;exec('DROP TABLE IF EXISTS example');
+    }
+};</code></pre><p>Generate a migration with <code>php local make:migration create_products_table</code>, then edit its <code>up()</code> and <code>down()</code> methods to define the schema.</p><div class="callout warn"><strong>Destructive commands.</strong> <code>php local migrate:fresh --force</code> drops and recreates migration-managed tables. Use only when you intend to reset the database and have a backup if the data matters.</div></section>
+<section class="section" id="seeders"><h2>17. Seeders</h2><p>Seeders populate development or test data. The base class is <code>LocalPHP\Database\Seeder</code>, which defines <code>run(PDO $pdo): void</code>.</p><pre><code>use LocalPHP\Database\Seeder;
+use PDO;
+
+final class ProductSeeder extends Seeder
+{
+    public function run(PDO $pdo): void
+    {
+        $statement = $pdo-&gt;prepare(
+            'INSERT INTO products (name, sku) VALUES (?, ?)'
+        );
+        $statement-&gt;execute(['Spark Plug', 'SP-001']);
+    }
+}</code></pre><p>Generate a seeder with <code>php local make:seeder ProductSeeder</code> and run the default or a named seeder with <code>php local db:seed</code> or <code>php local db:seed ProductSeeder</code>.</p></section>
+<section class="section" id="cli"><h2>18. CLI command reference</h2><p>Run commands from the project root using <code>php local &lt;command&gt;</code>.</p><div class="tablewrap"><table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><code>php local</code> / <code>php local list</code></td><td>Display available commands.</td></tr><tr><td><code>php local about</code></td><td>Display framework information.</td></tr><tr><td><code>php local make:controller Home</code></td><td>Create a controller.</td></tr><tr><td><code>php local make:model Product</code></td><td>Create a model.</td></tr><tr><td><code>php local make:filter UserFilter</code></td><td>Create a filter class.</td></tr><tr><td><code>php local make:validator User</code></td><td>Create a validator scaffold.</td></tr><tr><td><code>php local make:middleware Auth</code></td><td>Create a middleware scaffold.</td></tr><tr><td><code>php local make:migration create_products_table</code></td><td>Create a migration.</td></tr><tr><td><code>php local migrate</code></td><td>Run pending migrations.</td></tr><tr><td><code>php local migrate:status</code></td><td>Show migration status.</td></tr><tr><td><code>php local migrate:rollback</code></td><td>Roll back the latest migration batch.</td></tr><tr><td><code>php local migrate:fresh --force</code></td><td>Drop tables and rerun migrations; destructive.</td></tr><tr><td><code>php local make:seeder ProductSeeder</code></td><td>Create a seeder.</td></tr><tr><td><code>php local db:seed</code></td><td>Run the default seeder.</td></tr><tr><td><code>php local db:seed ProductSeeder</code></td><td>Run a named seeder.</td></tr><tr><td><code>php local config:cache</code></td><td>Compile configuration into <code>storage/cache/config.php</code>.</td></tr><tr><td><code>php local config:clear</code></td><td>Remove compiled configuration.</td></tr><tr><td><code>php local optimize</code></td><td>Prepare configuration cache; also prints guidance about PHP OPcache.</td></tr><tr><td><code>php local optimize:clear</code></td><td>Clear framework cache files.</td></tr><tr><td><code>php local clean</code></td><td>Clear cache and logs.</td></tr><tr><td><code>php local clean:cache</code></td><td>Clear cache files.</td></tr><tr><td><code>php local clean:logs</code></td><td>Clear log files.</td></tr></tbody></table></div><p class="muted">The CLI's exact command set is defined in <code>framework/src/Console/Kernel.php</code>. If a command is absent in your working copy, check <code>php local list</code>.</p></section>
+<section class="section" id="cache-logs"><h2>19. Cache, errors, and logs</h2><h3>Configuration cache</h3><p>Configuration caching is implemented through a generated PHP file, not a general-purpose data cache:</p><pre><code>php local config:cache
+php local config:clear</code></pre><p>The runtime configuration helper reads <code>storage/cache/config.php</code> when present. Rebuild the cache after changing configuration files or values that are baked into the cache.</p><h3>Exception logs</h3><p>The web exception handler registers PHP error, uncaught exception, and shutdown handling. It writes exception details to a daily file such as <code>storage/logs/localphp-YYYY-MM-DD.log</code> and falls back to PHP's <code>error_log()</code> if writing fails. When debug mode is disabled, the web exception page is intended to hide detailed exception information from visitors.</p><div class="callout good"><strong>Implemented in source:</strong> configuration-file caching and web exception logging.</div><div class="callout warn"><strong>Not the same as a complete cache/logger service.</strong> The current source does not establish a general cache API with TTL/invalidation for arbitrary application data, nor a verified logger facade with methods such as <code>logger()-&gt;info()</code>. Route caching is not documented as available.</div><h3>Local vs production settings</h3><div class="tablewrap"><table><thead><tr><th>Setting</th><th>Local development</th><th>Public deployment</th></tr></thead><tbody><tr><td><code>APP_ENV</code></td><td><code>local</code></td><td>Use the environment name your deployment convention requires.</td></tr><tr><td><code>APP_DEBUG</code></td><td><code>true</code> can help while debugging locally.</td><td>Set to <code>false</code>.</td></tr><tr><td>Secrets</td><td>Use local credentials.</td><td>Use private environment configuration; never commit secrets.</td></tr><tr><td>Web root</td><td>Root-folder setup may be used locally.</td><td>Prefer a document root that exposes only public entry files; verify Apache rules and storage protections.</td></tr></tbody></table></div></section>
+<section class="section" id="security"><h2>20. Security practices</h2><ul><li>Keep <code>.env</code> out of version control and ensure the web server denies direct access to it.</li><li>Set <code>APP_DEBUG=false</code> on publicly reachable deployments.</li><li>Use query-builder parameters or PDO prepared statements for values; do not concatenate user input into SQL.</li><li>Escape user-controlled output. Use raw template output only for trusted/sanitized HTML.</li><li>Validate every incoming request on the server.</li><li>Use allowlists for mass assignment through model <code>$fillable</code> settings.</li><li>Use HTTPS and secure session cookie settings where HTTPS is available.</li><li>Confirm CSRF token validation is actually applied to state-changing routes; token-generation helpers alone do not prove enforcement.</li><li>Verify the storage directory is not publicly readable by the configured web server.</li><li>Back up data before running destructive migration commands.</li></ul><div class="callout warn"><strong>Deployment readiness.</strong> LocalPHP is a lightweight framework in active development. Treat public production use as requiring a separate security review, integration tests, correct document-root setup, and verification of middleware/CSRF behavior.</div></section>
+<section class="section" id="troubleshooting"><h2>21. Troubleshooting</h2><h3>Composer class not found</h3><pre><code>composer dump-autoload</code></pre><p>Check namespace and file path. <code>LocalPHP\</code> maps to <code>framework/src/</code>; <code>App\</code> maps to <code>app/</code>.</p><h3>404 - Page Not Found</h3><ul><li>Confirm the route exists in <code>routes/web.php</code>.</li><li>Check the HTTP method and URI, including any subfolder/base path.</li><li>Check that the web server points to the expected project entry point and rewrite rules are enabled.</li><li>Ensure the application boots and route definitions load successfully.</li></ul><h3>MySQL connection refused</h3><ul><li>Start MySQL in Laragon.</li><li>Verify host, port, database name, username, and password in <code>.env</code>.</li><li>Create the database before migrations.</li><li>Ensure the PDO MySQL extension is enabled in the PHP version used by both Apache and CLI.</li></ul><h3>View not found</h3><p>Check that the view exists under <code>resources/views/</code> and the name matches the file path. For example, <code>view('home')</code> maps to <code>resources/views/home.php</code>.</p><h3>Configuration changes seem ignored</h3><pre><code>php local config:clear
+php local config:cache</code></pre><p>Clear the cache first when testing uncached values. Rebuild it after final changes if you want cached configuration enabled.</p><h3>Log file missing</h3><p>Trigger an error only in a safe local test, then check <code>storage/logs/</code>. Verify that the directory is writable by the PHP process. If the log write fails, the handler attempts to use PHP's error log.</p></section>
+<section class="section" id="api-index"><h2>22. Quick API index</h2><div class="tablewrap"><table><thead><tr><th>Class</th><th>Key methods / role</th></tr></thead><tbody><tr><td><code>LocalPHP\Application</code></td><td>Application bootstrap, base path, service resolution, request handling.</td></tr><tr><td><code>LocalPHP\Http\Request</code></td><td><code>capture</code>, <code>method</code>, <code>uri</code>, <code>query</code>, <code>input</code>, <code>file</code>, <code>cookie</code>, <code>server</code>.</td></tr><tr><td><code>LocalPHP\Http\Response</code></td><td><code>content</code>, <code>statusCode</code>, <code>status</code>, <code>header</code>, <code>headers</code>, <code>send</code>.</td></tr><tr><td><code>LocalPHP\Routing\Router</code></td><td>HTTP verb registration, <code>group</code>, <code>urlFor</code>, <code>routes</code>, <code>dispatch</code>.</td></tr><tr><td><code>LocalPHP\Routing\Route</code></td><td><code>name</code>, <code>getName</code>, <code>matches</code>, <code>extractParameters</code>.</td></tr><tr><td><code>LocalPHP\View\Local</code></td><td><code>render</code>, <code>compile</code>, section/layout helpers, includes.</td></tr><tr><td><code>LocalPHP\Database\DB</code></td><td><code>table</code>, <code>connection</code>, <code>raw</code>, transaction methods.</td></tr><tr><td><code>LocalPHP\Database\QueryBuilder</code></td><td>Filtering, joins, aggregates, sorting, limits, select and write operations.</td></tr><tr><td><code>LocalPHP\Model\Model</code></td><td><code>query</code>, <code>all</code>, <code>find</code>, <code>where</code>, <code>create</code>, <code>save</code>, <code>delete</code>.</td></tr><tr><td><code>LocalPHP\Database\Schema</code></td><td><code>create</code>, <code>table</code>, <code>drop</code>, <code>dropIfExists</code>.</td></tr><tr><td><code>LocalPHP\Validation\Validator</code></td><td><code>make</code>, <code>passes</code>, <code>fails</code>, <code>errors</code>, <code>validated</code>, <code>first</code>.</td></tr><tr><td><code>LocalPHP\Session\SessionManager</code></td><td>Read/write session, flash, regenerate, destroy.</td></tr><tr><td><code>LocalPHP\Support\Environment</code></td><td><code>load</code>, <code>get</code>, <code>all</code>.</td></tr><tr><td><code>LocalPHP\Support\ExceptionHandler</code></td><td>Register handlers, render exceptions, report/write logs.</td></tr></tbody></table></div></section>
+<section class="section" id="status"><h2>23. Feature status and boundaries</h2><p>This section intentionally separates source-backed behavior from features that should not be assumed complete.</p><div class="tablewrap"><table><thead><tr><th>Area</th><th>Status in inspected source</th><th>Notes</th></tr></thead><tbody><tr><td>Application bootstrap / HTTP request and response</td><td><span class="tag">Present</span></td><td>Core entry point, request object, response object.</td></tr><tr><td>Routing and controller dispatch</td><td><span class="tag">Present</span></td><td>GET/POST/PUT/PATCH/DELETE/any, route parameters, groups and named URL generation are present in the Router source.</td></tr><tr><td>Custom views and helpers</td><td><span class="tag">Present</span></td><td>PHP-based custom template engine; not full Laravel Blade compatibility.</td></tr><tr><td>Environment/configuration</td><td><span class="tag">Present</span></td><td>Environment loader and dot-key configuration helper.</td></tr><tr><td>Configuration cache</td><td><span class="tag">Present</span></td><td>Compiled config PHP file and CLI clear/cache commands.</td></tr><tr><td>Web exception logging</td><td><span class="tag">Present</span></td><td>Daily log files with PHP error-log fallback; verify permissions at runtime.</td></tr><tr><td>Query builder and PDO MySQL</td><td><span class="tag">Present</span></td><td>Large set of query, join, aggregate, and write methods. Run integration tests against your DB.</td></tr><tr><td>Basic ORM/model layer</td><td><span class="tag">Present</span></td><td>CRUD-style methods; do not assume advanced ORM relations/features.</td></tr><tr><td>Schema builder / migrations / seeders</td><td><span class="tag">Present</span></td><td>MySQL-focused; migration behavior and destructive paths should be tested.</td></tr><tr><td>Validation</td><td><span class="tag">Present</span></td><td>Rule set listed in this guide; DB rules need connectivity.</td></tr><tr><td>General-purpose data cache with TTL</td><td><span class="tag caution">Not verified</span></td><td>Configuration cache exists; a generic key/value cache API is not established by this source.</td></tr><tr><td>General logger API</td><td><span class="tag caution">Not verified</span></td><td>Exception logging exists; a full application logger facade is not established.</td></tr><tr><td>Route cache / compiled routes</td><td><span class="tag caution">Not present in CLI</span></td><td>Do not assume route caching is available.</td></tr><tr><td>Full production-hardening / middleware enforcement</td><td><span class="tag caution">Verify separately</span></td><td>Check CSRF enforcement, filter pipeline, access restrictions, and deployment configuration.</td></tr></tbody></table></div><p class="muted">Documentation prepared against the LocalPHP source snapshot available on 9 October 2026. Update this page as the implementation evolves.</p></section>
+<footer class="footer">LocalPHP Documentation · PHP 8.2+ · Local development framework<br>For exact behavior, the source code in <code>framework/src/</code> is authoritative.</footer>
+</main></div>
+<script>
+const search=document.getElementById('docSearch');const sidebar=document.getElementById('sidebar');const menuBtn=document.getElementById('menuBtn');
+search.addEventListener('input',()=>{const q=search.value.trim().toLowerCase();document.querySelectorAll('.sidebar a').forEach(a=>{a.classList.toggle('hidden',q!==''&&!a.textContent.toLowerCase().includes(q));});document.querySelectorAll('.section').forEach(s=>{s.classList.toggle('hidden',q!==''&&!s.textContent.toLowerCase().includes(q));});document.querySelector('.hero').classList.toggle('hidden',q!==''&&!document.querySelector('.hero').textContent.toLowerCase().includes(q));});
+menuBtn.addEventListener('click',()=>sidebar.classList.toggle('open'));document.querySelectorAll('.sidebar a').forEach(a=>a.addEventListener('click',()=>sidebar.classList.remove('open')));
+const links=[...document.querySelectorAll('.sidebar a')];const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));}}),{rootMargin:'-15% 0px -75% 0px'});document.querySelectorAll('main section[id]').forEach(s=>observer.observe(s));
+</script>
+</body></html>
